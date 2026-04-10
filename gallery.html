@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Joshua's Website</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url('https://images.unsplash.com/photo-1492724441997-5dc865305da7');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+    }
+
+    .gallery-img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: 0.3s ease;
+    }
+
+    .gallery-img:hover {
+      transform: scale(1.05);
+      filter: brightness(0.8);
+    }
+
+    .filter-btn {
+      margin: 5px;
+    }
+
+    footer {
+      background-color: #212529;
+      color: white;
+      padding: 30px 0;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="index.html">My Own Website</a>
+
+```
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+<div class="collapse navbar-collapse" id="navbarNav">
+  <ul class="navbar-nav ms-auto">
+    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+    <li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li>
+  </ul>
+</div>
+```
+
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <h1 class="display-5 fw-bold">My Gallery</h1>
+    <p class="lead">Choose a category to view my works</p>
+  </div>
+</section>
+
+<div class="container my-5" style="max-height: 600px; overflow-y: auto;">
+
+
+  <div class="mb-4">
+   
+    <button class="btn btn-outline-dark filter-btn" onclick="filterSelection('all', this)">All</button>
+    <button class="btn btn-outline-dark filter-btn" onclick="filterSelection('projects', this)">Projects</button>
+    <button class="btn btn-outline-dark filter-btn" onclick="filterSelection('personal', this)">Personal</button>
+    <button class="btn btn-outline-dark filter-btn" onclick="filterSelection('random', this)">Random</button>
+    
+  </div>
+
+
+  <div class="row g-4">
+
+
+
+<div class="col-md-4 gallery-item projects">
+  <img src="Project1.png" class="gallery-img">
+  <p class="mt-2">Project 1</p>
+</div>
+
+<div class="col-md-4 gallery-item projects">
+  <img src="Project2.png" class="gallery-img">
+  <p class="mt-2">Project 2</p>
+</div>
+
+<div class="col-md-4 gallery-item projects">
+  <img src="Project3.jpg" class="gallery-img">
+  <p class="mt-2">Project 3</p>
+</div>
+
+<div class="col-md-4 gallery-item projects">
+  <img src="Project4.png" class="gallery-img">
+  <p class="mt-2">Project 4</p>
+</div>
+
+<div class="col-md-4 gallery-item personal">
+  <img src="Personal1.jpg" class="gallery-img">
+  <p class="mt-2">Personal 1</p>
+</div>
+
+<div class="col-md-4 gallery-item personal">
+  <img src="Personal2.jpg" class="gallery-img">
+  <p class="mt-2">Personal 2</p>
+</div>
+
+<div class="col-md-4 gallery-item personal">
+  <img src="Personal3.jpg" class="gallery-img">
+  <p class="mt-2">Personal 3</p>
+</div>
+
+<div class="col-md-4 gallery-item personal">
+  <img src="Personal4.jpg" class="gallery-img">
+  <p class="mt-2">Personal 4</p>
+</div>
+
+<div class="col-md-4 gallery-item random">
+  <img src="Random1.jpg" class="gallery-img">
+  <p class="mt-2">Random 1</p>
+</div>
+
+<div class="col-md-4 gallery-item random">
+  <img src="Random2.jpg" class="gallery-img">
+  <p class="mt-2">Random 2</p>
+</div>
+
+<div class="col-md-4 gallery-item random">
+  <img src="Random3.jpg" class="gallery-img">
+  <p class="mt-2">Random 3</p>
+</div>
+
+<div class="col-md-4 gallery-item random">
+  <img src="Random4.jpg" class="gallery-img">
+  <p class="mt-2">Random 4</p>
+</div>
+
+  </div>
+</div>
+
+<footer>
+  <div class="container text-center">
+    <p class="mb-1">&copy; 2026 My Own Website. All Rights Reserved.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+function filterSelection(category) {
+  let items = document.getElementsByClassName("gallery-item");
+
+  for (let i = 0; i < items.length; i++) {
+    items[i].style.display = "none";
+  }
+
+  if (category === "all") {
+    for (let i = 0; i < items.length; i++) {
+      items[i].style.display = "block";
+    }
+  } else {
+    let selected = document.getElementsByClassName(category);
+    for (let i = 0; i < selected.length; i++) {
+      selected[i].style.display = "block";
+    }
+  }
+}
+</script>
+
+</body>
+</html>
